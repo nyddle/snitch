@@ -1,0 +1,21 @@
+<head>
+  <title>Snitch - mobile notifications from within your code</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Events</h1>
+    </header>
+
+    <ul>
+      {{#each events}}
+        {{> event}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="event">
+  <li>{{text}}</li>
+</template>
