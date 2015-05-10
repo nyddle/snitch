@@ -7,15 +7,24 @@
     <header>
       <h1>Events</h1>
     </header>
-
-    <ul>
-      {{#each events}}
-        {{> event}}
-      {{/each}}
-    </ul>
+        {{> appEvents}}
   </div>
 </body>
 
-<template name="event">
-  <li>{{text}}</li>
+<template name="appEvent">
+  <li>{{text}} {{ app }} {{ name }}</li>
 </template>
+
+<template name="allApps">
+  <div>It'll be {{app}} tonight</div>
+</template>
+
+<template name="appEvents">
+    <ul>
+      {{#each appevents}}
+        {{> appEvent}}
+      {{/each}}
+    </ul>
+</template>
+
+
