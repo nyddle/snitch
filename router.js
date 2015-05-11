@@ -15,12 +15,15 @@ Router.map(function() {
   });
 
   this.route('newevent', {
+    method: 'POST',
     path: '/newevent',
     where: 'server',
     action: function() {
+      console.log(this.request);
       this.response.writeHead(200, {'Content-Type': 'text/html'});
-      this.response.end('hello from server');
+      this.response.end(this.request.body.message);
 
+      Events.insert(this.request.body);
       //doSomethingWithParams(this.request.query);
     }
   });
